@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>30-Day ADHD Regulation Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream: #f7f4ee;
+    --warm-white: #fdfcf9;
+    --sage: #7a9e87;
+    --sage-light: #d4e4da;
+    --sage-dark: #4a7a5a;
+    --amber: #c8854a;
+    --amber-light: #f5e6d3;
+    --charcoal: #2c2c28;
+    --muted: #7a7a72;
+    --border: #e2ddd5;
+    --week1: #7a9e87;
+    --week2: #c8854a;
+    --week3: #7b7bc4;
+    --week4: #c46a7a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 48px 40px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    border: 1px solid rgba(247,244,238,0.08);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 20%;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 1px solid rgba(247,244,238,0.06);
+  }
+  .header-tag {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    max-width: 600px;
+  }
+  .header h1 em {
+    font-style: italic;
+    color: #b8d4c0;
+  }
+  .header p {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(247,244,238,0.65);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+  .pillars {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+  .pillar {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(247,244,238,0.08);
+    color: rgba(247,244,238,0.7);
+    border: 1px solid rgba(247,244,238,0.12);
+  }
+
+  /* WEEK TABS */
+  .week-nav {
+    display: flex;
+    gap: 0;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .week-nav::-webkit-scrollbar { display: none; }
+  .week-tab {
+    flex: 1;
+    min-width: 140px;
+    padding: 20px 16px 16px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+  .week-tab:hover { background: var(--cream); }
+  .week-tab.active { background: var(--cream); }
+  .week-tab.active.w1 { border-bottom-color: var(--week1); }
+  .week-tab.active.w2 { border-bottom-color: var(--week2); }
+  .week-tab.active.w3 { border-bottom-color: var(--week3); }
+  .week-tab.active.w4 { border-bottom-color: var(--week4); }
+  .tab-number {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .tab-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+  .tab-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+    font-weight: 300;
+  }
+  .week-tab.active .tab-title.c1 { color: var(--week1); }
+  .week-tab.active .tab-title.c2 { color: var(--week2); }
+  .week-tab.active .tab-title.c3 { color: var(--week3); }
+  .week-tab.active .tab-title.c4 { color: var(--week4); }
+
+  /* CONTENT */
+  .content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .week-header {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .week-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  .week-badge.b1 { background: #d4e4da; color: var(--sage-dark); }
+  .week-badge.b2 { background: #f5e6d3; color: #a05c28; }
+  .week-badge.b3 { background: #e8e8f5; color: #4a4a9a; }
+  .week-badge.b4 { background: #f5dde0; color: #9a3a4a; }
+  .week-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  .week-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 580px;
+  }
+
+  /* DAY CARDS */
+  .days-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .day-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+  }
+  .day-card:hover { box-shadow: 0 2px 16px rgba(44,44,40,0.06); }
+  .day-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .day-num {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .dn1 { background: #d4e4da; color: var(--sage-dark); }
+  .dn2 { background: #f5e6d3; color: #a05c28; }
+  .dn3 { background: #e8e8f5; color: #4a4a9a; }
+  .dn4 { background: #f5dde0; color: #9a3a4a; }
+  .day-meta { flex: 1; }
+  .day-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+  .day-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+  .day-type {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .type-body { background: #d4e4da; color: var(--sage-dark); }
+  .type-mind { background: #e8e8f5; color: #4a4a9a; }
+  .type-system { background: #f5e6d3; color: #a05c28; }
+  .type-review { background: #f5dde0; color: #9a3a4a; }
+  .type-env { background: #ffeedd; color: #8a5020; }
+  .chevron {
+    color: var(--muted);
+    font-size: 12px;
+    margin-left: 8px;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+  .day-card.open .chevron { transform: rotate(180deg); }
+
+  .day-body {
+    display: none;
+    padding: 0 20px 20px 74px;
+    border-top: 1px solid var(--border);
+  }
+  .day-card.open .day-body { display: block; }
+
+  .practice-box {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-top: 16px;
+  }
+  .practice-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .practice-text {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--charcoal);
+  }
+  .practice-text strong {
+    font-weight: 600;
+  }
+  .why-box {
+    margin-top: 12px;
+    padding: 12px 16px;
+    border-left: 3px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    font-style: italic;
+  }
+  .steps {
+    list-style: none;
+    margin-top: 10px;
+  }
+  .steps li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 5px 0;
+    color: var(--charcoal);
+  }
+  .steps li::before {
+    content: attr(data-n);
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border-radius: 50%;
+    background: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-top: 1px;
+  }
+
+  /* HIDDEN WEEK PANELS */
+  .week-panel { display: none; }
+  .week-panel.active { display: block; }
+
+  /* FOOTER QUOTE */
+  .quote-banner {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 40px;
+    text-align: center;
+  }
+  .quote-text {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 18px;
+    font-style: italic;
+    max-width: 560px;
+    margin: 0 auto 12px;
+    line-height: 1.6;
+    color: rgba(247,244,238,0.9);
+  }
+  .quote-attr { font-size: 12px; color: var(--sage); letter-spacing: 0.1em; }
+
+  /* ── TABLET ── */
+  @media (max-width: 700px) {
+    .header { padding: 36px 24px 32px; }
+    .header h1 { font-size: 26px; }
+    .content { padding: 28px 16px 60px; }
+    .week-title { font-size: 22px; }
+    .day-body { padding: 0 16px 18px 16px; }
+    .steps li { font-size: 13px; }
+    .quote-banner { padding: 32px 24px; }
+    .quote-text { font-size: 16px; }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 480px) {
+    .header { padding: 28px 18px 28px; }
+    .header h1 { font-size: 22px; line-height: 1.2; }
+    .header p { font-size: 13px; }
+    .header-tag { font-size: 10px; }
+    .pillars { gap: 6px; margin-top: 20px; }
+    .pillar { font-size: 10px; padding: 3px 10px; }
+
+    /* Week nav: stack 2x2 grid instead of horizontal scroll */
+    .week-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .week-tab {
+      min-width: unset;
+      padding: 14px 12px 12px;
+      border-bottom: 2px solid transparent;
+    }
+    .tab-number { font-size: 9px; letter-spacing: 0.08em; }
+    .tab-title { font-size: 12px; }
+    .tab-sub { display: none; }
+
+    /* Content */
+    .content { padding: 22px 14px 50px; }
+    .week-header { margin-bottom: 22px; padding-bottom: 18px; }
+    .week-badge { font-size: 10px; padding: 3px 11px; margin-bottom: 10px; }
+    .week-title { font-size: 20px; margin-bottom: 6px; }
+    .week-desc { font-size: 13px; }
+
+    /* Day cards */
+    .day-header { padding: 14px 14px; gap: 12px; }
+    .day-num { width: 32px; height: 32px; font-size: 12px; flex-shrink: 0; }
+    .day-title { font-size: 13px; }
+    .day-label { font-size: 10px; }
+    .day-type { font-size: 10px; padding: 2px 8px; }
+
+    /* Expanded body — remove the large left indent on mobile */
+    .day-body { padding: 0 14px 16px 14px; border-top: 1px solid var(--border); }
+    .practice-box { padding: 14px 14px; margin-top: 14px; }
+    .practice-label { font-size: 9px; }
+    .practice-text { font-size: 13px; line-height: 1.7; }
+    .why-box { font-size: 12px; padding: 10px 14px; margin-top: 10px; }
+    .steps li { font-size: 13px; gap: 8px; }
+    .steps li::before { width: 20px; height: 20px; min-width: 20px; font-size: 10px; }
+
+    /* Footer */
+    .quote-banner { padding: 28px 18px; }
+    .quote-text { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-tag">Evidence-Based · Neurologically Informed</div>
+  <h1>30 Days to <em>Quiet</em> Your ADHD<br>and Build a Brain That Works</h1>
+  <p>This plan works with your neurology, not against it. Each week builds on the last — rewiring habits, regulating your nervous system, and creating external structure so your brain can finally exhale.</p>
+  <div class="pillars">
+    <span class="pillar">Sleep regulation</span>
+    <span class="pillar">Dopamine management</span>
+    <span class="pillar">Body regulation</span>
+    <span class="pillar">External systems</span>
+    <span class="pillar">Task initiation</span>
+    <span class="pillar">Emotional dysregulation</span>
+    <span class="pillar">Time blindness</span>
+    <span class="pillar">Environment design</span>
+  </div>
+</div>
+
+<nav class="week-nav">
+  <button class="week-tab w1 active" onclick="showWeek(1, this)">
+    <div class="tab-number">Week 1 · Days 1–7</div>
+    <div class="tab-title c1">Awareness & Anchors</div>
+    <div class="tab-sub">Understand your patterns</div>
+  </button>
+  <button class="week-tab w2" onclick="showWeek(2, this)">
+    <div class="tab-number">Week 2 · Days 8–14</div>
+    <div class="tab-title c2">Body Regulation</div>
+    <div class="tab-sub">Regulate from the inside</div>
+  </button>
+  <button class="week-tab w3" onclick="showWeek(3, this)">
+    <div class="tab-number">Week 3 · Days 15–21</div>
+    <div class="tab-title c3">Systems & Environment</div>
+    <div class="tab-sub">Build external scaffolding</div>
+  </button>
+  <button class="week-tab w4" onclick="showWeek(4, this)">
+    <div class="tab-number">Week 4 · Days 22–30</div>
+    <div class="tab-title c4">Integration & Sustaining</div>
+    <div class="tab-sub">Make it permanent</div>
+  </button>
+</nav>
+
+<div class="content">
+
+<!-- ══════════════════ WEEK 1 ══════════════════ -->
+<div class="week-panel active" id="week1">
+  <div class="week-header">
+    <div class="week-badge b1">Week One</div>
+    <div class="week-title">Awareness & Anchors</div>
+    <div class="week-desc">Before you can change anything, you need to see your own patterns clearly. This week is about honest observation and installing the first tiny anchors — a consistent wake time, a brain dump habit, and one timer practice. No overhaul. Just watching and beginning.</div>
+  </div>
+  <div class="days-grid">
+
+    <div class="day-card" id="d1">
+      <div class="day-header" onclick="toggle('d1')">
+        <div class="day-num dn1">1</div>
+        <div class="day-meta">
+          <div class="day-label">Day One</div>
+          <div class="day-title">Map your chaos — track your real day</div>
+        </div>
+        <span class="day-type type-mind">Awareness</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Set a recurring alarm every 2 hours from wake to sleep. When it goes off, take 60 seconds to write three things: <strong>what you were doing, how you felt (1–10 energy), and whether you were focused or scattered.</strong> Do this for the whole day without trying to change anything yet.</div>
+        </div>
+        <div class="why-box">The ADHD brain has almost zero accurate self-awareness about time and energy. You cannot regulate what you can't see. This single day of data is more useful than a week of guessing.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d2">
+      <div class="day-header" onclick="toggle('d2')">
+        <div class="day-num dn1">2</div>
+        <div class="day-meta">
+          <div class="day-label">Day Two</div>
+          <div class="day-title">Set one non-negotiable wake time</div>
+        </div>
+        <span class="day-type type-body">Sleep</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Pick a single wake time you can hit 7 days a week — even weekends. Set it now. It doesn't need to be early, it needs to be <strong>consistent.</strong> ADHD brains have dysregulated circadian rhythms. A fixed anchor time is the single highest-leverage thing you can do for your neurochemistry. Alarm goes across the room so you must stand up to turn it off.</div>
+        </div>
+        <div class="why-box">Irregular sleep devastates dopamine and norepinephrine — the exact chemicals your ADHD brain is already short on. Consistent wake time is free medication.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d3">
+      <div class="day-header" onclick="toggle('d3')">
+        <div class="day-num dn1">3</div>
+        <div class="day-meta">
+          <div class="day-label">Day Three</div>
+          <div class="day-title">Install the daily brain dump</div>
+        </div>
+        <span class="day-type type-system">System</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Every morning within 20 minutes of waking, sit somewhere quiet with paper or a notes app. Set a 5-minute timer and write <strong>every single thing in your head</strong> — tasks, worries, random thoughts, things you forgot, things you need to do. Don't organize it. Just empty the working memory completely onto paper. Do this today and from now on.</div>
+        </div>
+        <div class="why-box">The ADHD working memory is tiny — maybe 2 slots instead of 7. Keeping mental tabs on uncaptured tasks burns cognitive resources all day. The brain dump frees that RAM completely.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d4">
+      <div class="day-header" onclick="toggle('d4')">
+        <div class="day-num dn1">4</div>
+        <div class="day-meta">
+          <div class="day-label">Day Four</div>
+          <div class="day-title">The 25/5 timer — your first focus tool</div>
+        </div>
+        <span class="day-type type-system">Focus</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Use a physical timer (not your phone — phones are traps). Set it for <strong>25 minutes</strong>. Do one task only. When it goes off, stop and take 5 minutes completely away from the task — stand up, stretch, look out a window. Then repeat. Do this for every focused task today. You're not training discipline — you're training your brain to trust that focus has a defined end.</div>
+        </div>
+        <div class="why-box">ADHD brains resist starting because they can't feel when something will end. The timer makes tasks time-bounded and therefore less threatening. It also prevents hyperfocus collapse.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d5">
+      <div class="day-header" onclick="toggle('d5')">
+        <div class="day-num dn1">5</div>
+        <div class="day-meta">
+          <div class="day-label">Day Five</div>
+          <div class="day-title">Identify your top 3 dopamine drains</div>
+        </div>
+        <span class="day-type type-mind">Awareness</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Make a list of the things you reach for when you're bored, anxious, or procrastinating. Common ones: <strong>Instagram/TikTok, YouTube rabbit holes, gaming, news refreshing, snacking, online shopping.</strong> Pick your top 3. For each one, note: when do you reach for it, how long does it usually last, and how do you feel after? Write this down. You're not eliminating them yet — just naming them with honesty.</div>
+        </div>
+        <div class="why-box">These quick dopamine hits hijack the reward system and make real tasks feel duller by comparison. Naming them is the first step to choosing differently.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d6">
+      <div class="day-header" onclick="toggle('d6')">
+        <div class="day-num dn1">6</div>
+        <div class="day-meta">
+          <div class="day-label">Day Six</div>
+          <div class="day-title">The 3-task rule — shrink your to-do list</div>
+        </div>
+        <span class="day-type type-system">System</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">After your brain dump, choose only <strong>3 tasks</strong> that must get done today. Write them on a sticky note and put it where you can see it. Everything else is optional. The ADHD brain collapses under long to-do lists — the overwhelm triggers shutdown. Three is enough. Three is actually achievable. Complete your 3, and anything else is a bonus.</div>
+        </div>
+        <div class="why-box">ADHD produces chronic over-commitment because the brain can't accurately forecast time and effort. 3 realistic tasks done beats 15 tasks abandoned every single time.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d7">
+      <div class="day-header" onclick="toggle('d7')">
+        <div class="day-num dn1">7</div>
+        <div class="day-meta">
+          <div class="day-label">Day Seven</div>
+          <div class="day-title">Week 1 review — what's already working?</div>
+        </div>
+        <span class="day-type type-review">Review</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <ul class="steps">
+            <li data-n="1">Which of the 3 habits actually stuck — even partially? (Brain dump, timer, 3-task rule, wake time)</li>
+            <li data-n="2">Which one felt hardest? Why? Was it the habit itself or the timing?</li>
+            <li data-n="3">What did you notice about your energy patterns from Day 1's tracking?</li>
+            <li data-n="4">Write down one thing you'll protect and one thing you'll adjust going into Week 2.</li>
+          </ul>
+        </div>
+        <div class="why-box">The goal is never perfection. If you hit 3 out of 7 days on any habit this week, that's a real foundation. ADHD regulation is cumulative, not binary.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════ WEEK 2 ══════════════════ -->
+<div class="week-panel" id="week2">
+  <div class="week-header">
+    <div class="week-badge b2">Week Two</div>
+    <div class="week-title">Body Regulation</div>
+    <div class="week-desc">ADHD is a body problem as much as a brain problem. Your nervous system is dysregulated at a physical level. This week you'll use movement, food, cold water, sleep hygiene, and body check-ins to regulate your system from the inside out.</div>
+  </div>
+  <div class="days-grid">
+
+    <div class="day-card" id="d8">
+      <div class="day-header" onclick="toggle('d8')">
+        <div class="day-num dn2">8</div>
+        <div class="day-meta">
+          <div class="day-label">Day Eight</div>
+          <div class="day-title">10 minutes of movement before demands</div>
+        </div>
+        <span class="day-type type-body">Body</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Before anything cognitively demanding — before work, before important tasks, before you sit at your desk — do <strong>10 minutes of movement.</strong> Walk, jog, do jumping jacks, dance in your kitchen. It doesn't matter what. This is non-negotiable from today. Movement is the most powerful non-pharmaceutical ADHD intervention that exists.</div>
+        </div>
+        <div class="why-box">Exercise increases dopamine, norepinephrine, and serotonin — the exact same neurotransmitters that ADHD medications target. 10 minutes of cardio provides 60–90 minutes of improved focus and executive function.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d9">
+      <div class="day-header" onclick="toggle('d9')">
+        <div class="day-num dn2">9</div>
+        <div class="day-meta">
+          <div class="day-label">Day Nine</div>
+          <div class="day-title">Cold water reset — instant nervous system brake</div>
+        </div>
+        <span class="day-type type-body">Body</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">When you feel scattered, overwhelmed, or unable to start something: go to the bathroom, run cold water, and <strong>splash your face 5–10 times</strong>. Or hold ice cubes in your palms for 30 seconds. Do this anytime today you feel dysregulated. This isn't a metaphor — cold water activates the dive reflex and literally slows your heart rate and shifts your nervous system within 30 seconds.</div>
+        </div>
+        <div class="why-box">The mammalian dive reflex is hardwired. Cold water on the face triggers the vagus nerve, drops heart rate, and physically shifts you from sympathetic (fight/flight/scatter) to parasympathetic (rest/regulate) in under a minute.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d10">
+      <div class="day-header" onclick="toggle('d10')">
+        <div class="day-num dn2">10</div>
+        <div class="day-meta">
+          <div class="day-label">Day Ten</div>
+          <div class="day-title">Find your peak focus window</div>
+        </div>
+        <span class="day-type type-mind">Awareness</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Review your Day 1 energy tracking. Look for your highest-energy, clearest-focus window — when was it? Morning? Late morning? Evening? For many ADHD brains the peak is <strong>late morning (10am–12pm)</strong> or late at night. Today, deliberately schedule your <strong>hardest single task</strong> inside that window. Protect it. No emails, no calls, no easy tasks during that slot.</div>
+        </div>
+        <div class="why-box">ADHD brains don't have "on demand" focus. They have windows. Fighting your biology by doing hard things when you're low leads to failure spirals. Working within your peak window is the single biggest productivity unlock.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d11">
+      <div class="day-header" onclick="toggle('d11')">
+        <div class="day-num dn2">11</div>
+        <div class="day-meta">
+          <div class="day-label">Day Eleven</div>
+          <div class="day-title">Protein-first breakfast — stabilise your dopamine</div>
+        </div>
+        <span class="day-type type-body">Body</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Today and from now on: eat protein within 30–45 minutes of waking <strong>before any sugar or simple carbs.</strong> Eggs, Greek yogurt, peanut butter, a protein shake — anything works. Skip sugary cereals, toast alone, pastries. Simple carbs spike blood sugar and crash it, which tanks dopamine and worsens ADHD symptoms for 2–3 hours. Protein provides tyrosine, the direct precursor to dopamine.</div>
+        </div>
+        <div class="why-box">Dopamine is synthesised from tyrosine (found in protein). Starting your day with protein literally gives your brain the raw materials for focus. A sugar crash is neurologically identical to an ADHD spiral.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d12">
+      <div class="day-header" onclick="toggle('d12')">
+        <div class="day-num dn2">12</div>
+        <div class="day-meta">
+          <div class="day-label">Day Twelve</div>
+          <div class="day-title">3x body check-ins — learn your dysregulation tells</div>
+        </div>
+        <span class="day-type type-mind">Awareness</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Set 3 alarms today spaced evenly through the day. When each goes off, pause for 30 seconds and scan your body: <strong>jaw clenched? shoulders tight? breath shallow? stomach knotted? legs restless?</strong> Write down one word for what you notice. The goal is to start feeling dysregulation in your body before it becomes a full meltdown or shutdown. Over time this becomes automatic.</div>
+        </div>
+        <div class="why-box">ADHD produces emotional dysregulation that often arrives without warning — because the brain skips the early signals. Body check-ins rebuild the connection between physical cues and conscious awareness.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d13">
+      <div class="day-header" onclick="toggle('d13')">
+        <div class="day-num dn2">13</div>
+        <div class="day-meta">
+          <div class="day-label">Day Thirteen</div>
+          <div class="day-title">Screen cutoff 45 min before bed</div>
+        </div>
+        <span class="day-type type-body">Sleep</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Tonight, set an alarm 45 minutes before you need to sleep. When it goes off: phone goes face-down or in another room. TV off. Replace with anything low-stimulus — a book, stretching, journaling, tidying, a podcast on low volume. ADHD brains have delayed melatonin release by default — screens make it dramatically worse. This one habit can shift your natural tiredness earlier by 60–90 minutes within a week.</div>
+        </div>
+        <div class="why-box">Blue light suppresses melatonin, but for ADHD brains the dopamine hit of scrolling actively prevents the neurological shift from wakefulness to sleep. The combo is particularly brutal for the ADHD circadian rhythm.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d14">
+      <div class="day-header" onclick="toggle('d14')">
+        <div class="day-num dn2">14</div>
+        <div class="day-meta">
+          <div class="day-label">Day Fourteen</div>
+          <div class="day-title">Week 2 review — what does your regulated body feel like?</div>
+        </div>
+        <span class="day-type type-review">Review</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <ul class="steps">
+            <li data-n="1">Did movement before demanding tasks change anything? Describe the feeling after — even briefly.</li>
+            <li data-n="2">When did you use the cold water reset? Did it help?</li>
+            <li data-n="3">What did body check-ins reveal about your tension patterns?</li>
+            <li data-n="4">Has sleep felt any different with a consistent wake time + screen cutoff?</li>
+            <li data-n="5">Which body-based tool felt most powerful? That's your regulation anchor. Keep it.</li>
+          </ul>
+        </div>
+        <div class="why-box">Two weeks in. You're not fixing ADHD — you're building a nervous system that doesn't need to white-knuckle through every day.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════ WEEK 3 ══════════════════ -->
+<div class="week-panel" id="week3">
+  <div class="week-header">
+    <div class="week-badge b3">Week Three</div>
+    <div class="week-title">Systems & Environment</div>
+    <div class="week-desc">The ADHD brain is highly environment-dependent. When your surroundings are designed well, you barely need willpower. This week is about building the external scaffolding — capture systems, focus zones, pre-decisions, and activation rituals — so your environment does the heavy lifting.</div>
+  </div>
+  <div class="days-grid">
+
+    <div class="day-card" id="d15">
+      <div class="day-header" onclick="toggle('d15')">
+        <div class="day-num dn3">15</div>
+        <div class="day-meta">
+          <div class="day-label">Day Fifteen</div>
+          <div class="day-title">Design your dedicated focus zone</div>
+        </div>
+        <span class="day-type type-env">Environment</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Pick one physical spot that will be your focus-only zone. A desk, a specific chair, a spot at the library — anywhere. Then make three changes: <strong>(1) remove everything from the surface except your current task, (2) phone goes in a different room or drawer, (3) add something that signals focus</strong> — a candle you only light when working, specific music or brown noise, a specific lamp. You're Pavlov-ing your brain to enter focus mode when it enters this space.</div>
+        </div>
+        <div class="why-box">ADHD brains rely heavily on environmental cues because internal regulation is unreliable. A dedicated focus zone builds a conditioned response — your brain learns that this space = focus, reducing activation energy every time.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d16">
+      <div class="day-header" onclick="toggle('d16')">
+        <div class="day-num dn3">16</div>
+        <div class="day-meta">
+          <div class="day-label">Day Sixteen</div>
+          <div class="day-title">One capture system — stop losing thoughts</div>
+        </div>
+        <span class="day-type type-system">System</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Choose ONE place where every thought, task, idea, and obligation gets captured immediately. One place only — not 4 apps, not sticky notes everywhere. Options: a small notebook in your pocket, Apple Notes, a voice memo app, a whiteboard by your desk. From today: anything that lands in your brain gets captured immediately and only in that one place. Then your brain can let it go instead of looping on it.</div>
+        </div>
+        <div class="why-box">The ADHD brain loops on uncaptured thoughts as a survival mechanism — afraid it'll forget. One trusted capture system stops the loop because the brain learns it's safe to let go.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d17">
+      <div class="day-header" onclick="toggle('d17')">
+        <div class="day-num dn3">17</div>
+        <div class="day-meta">
+          <div class="day-label">Day Seventeen</div>
+          <div class="day-title">Time-block your day into 3 zones</div>
+        </div>
+        <span class="day-type type-system">System</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Divide your day into 3 rough zones and assign a character to each. For most ADHD people it looks like: <strong>Morning zone</strong> — hardest cognitive work, your peak window. <strong>Afternoon zone</strong> — admin, emails, calls, lighter tasks. <strong>Evening zone</strong> — wind-down, planning tomorrow, personal time. Write the zones down for tomorrow. You're not scheduling every minute — you're giving different types of energy a home so the brain isn't constantly switching modes.</div>
+        </div>
+        <div class="why-box">Task-switching is extremely costly for ADHD brains. Batching similar tasks into zones reduces the cost of transitions and uses your dopamine where it matters most.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d18">
+      <div class="day-header" onclick="toggle('d18')">
+        <div class="day-num dn3">18</div>
+        <div class="day-meta">
+          <div class="day-label">Day Eighteen</div>
+          <div class="day-title">Pre-decide tomorrow — the night before protocol</div>
+        </div>
+        <span class="day-type type-system">System</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Tonight — just 5 minutes — do the following: <strong>(1) Write tomorrow's 3 non-negotiable tasks. (2) Decide your first action of the day in detail</strong> (not "work on project" — "open document and write first paragraph"). <strong>(3) Lay out anything physical you'll need</strong> — clothes, bag, gym kit. Decisions made the night before cost zero willpower the next morning. Decisions made in the morning cost everything.</div>
+        </div>
+        <div class="why-box">ADHD executive dysfunction peaks in the morning when dopamine is lowest. Pre-deciding removes the activation cost entirely. The brain just executes a plan instead of having to create one from scratch while dysregulated.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d19">
+      <div class="day-header" onclick="toggle('d19')">
+        <div class="day-num dn3">19</div>
+        <div class="day-meta">
+          <div class="day-label">Day Nineteen</div>
+          <div class="day-title">The activation ritual — 5 steps to start anything</div>
+        </div>
+        <span class="day-type type-system">Focus</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Build your personal ritual for starting any hard task. Use this template and adapt it:</div>
+          <ul class="steps" style="margin-top:12px">
+            <li data-n="1">Go to your focus zone and clear the surface</li>
+            <li data-n="2">Put phone away completely (in a drawer, another room)</li>
+            <li data-n="3">Put on your focus signal (music, candle, headphones)</li>
+            <li data-n="4">Write the one task you're starting on a sticky note in front of you</li>
+            <li data-n="5">Set the timer for 25 minutes and start</li>
+          </ul>
+          <div style="margin-top:12px;font-size:13px;color:var(--muted)">The ritual itself bridges the gap between "I should start" and "I am starting." Do it for every task today.</div>
+        </div>
+        <div class="why-box">Task initiation is the #1 failure point for ADHD. The ritual removes the decision entirely — instead of choosing to start, you're just following a sequence. Sequences are much easier than choices.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d20">
+      <div class="day-header" onclick="toggle('d20')">
+        <div class="day-num dn3">20</div>
+        <div class="day-meta">
+          <div class="day-label">Day Twenty</div>
+          <div class="day-title">Reduce decision fatigue everywhere</div>
+        </div>
+        <span class="day-type type-env">Environment</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Look at where you make pointless decisions daily and eliminate them. Today: <strong>(1) Standardise your breakfast</strong> — rotate 2–3 options, stop deciding each day. <strong>(2) Lay out a week of outfits on Sunday</strong> — or commit to a uniform. <strong>(3) Create a default dinner rotation</strong> of 5–7 simple meals. The goal is to take trivial decisions off your plate permanently so your dopamine goes toward things that matter.</div>
+        </div>
+        <div class="why-box">Every decision costs the same neurological resources whether it's trivial or important. ADHD brains have fewer of these resources to start with. Eliminating low-value decisions preserves capacity for high-value ones.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d21">
+      <div class="day-header" onclick="toggle('d21')">
+        <div class="day-num dn3">21</div>
+        <div class="day-meta">
+          <div class="day-label">Day Twenty-One</div>
+          <div class="day-title">Week 3 review — audit your system</div>
+        </div>
+        <span class="day-type type-review">Review</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <ul class="steps">
+            <li data-n="1">Is your focus zone actually being used? What's in the way if not?</li>
+            <li data-n="2">Are you using your capture system consistently? Where are the leaks?</li>
+            <li data-n="3">Did the night-before protocol change how you feel in the morning?</li>
+            <li data-n="4">Which environmental change had the biggest impact on your focus?</li>
+            <li data-n="5">Write down 2 system tweaks you want to make before Week 4.</li>
+          </ul>
+        </div>
+        <div class="why-box">Three weeks in. You now have external structure supporting your internal regulation. The last week is about locking it in and building resilience for the days when everything falls apart.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════ WEEK 4 ══════════════════ -->
+<div class="week-panel" id="week4">
+  <div class="week-header">
+    <div class="week-badge b4">Week Four</div>
+    <div class="week-title">Integration & Sustaining</div>
+    <div class="week-desc">The last 9 days are about weaving everything together, building resilience for bad days, and creating a personal ADHD operating manual you can return to whenever things unravel. The goal is a system that's self-correcting — not perfect execution, but fast recovery.</div>
+  </div>
+  <div class="days-grid">
+
+    <div class="day-card" id="d22">
+      <div class="day-header" onclick="toggle('d22')">
+        <div class="day-num dn4">22</div>
+        <div class="day-meta">
+          <div class="day-label">Day Twenty-Two</div>
+          <div class="day-title">Stack habits onto things that already exist</div>
+        </div>
+        <span class="day-type type-system">System</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Take the habits that are still wobbly and attach them to things you already do reliably. Formula: <strong>"After [existing habit], I will [new habit]."</strong> Examples: After I make coffee → brain dump. After I brush teeth at night → screen off, plan tomorrow. After I sit at my desk → activation ritual. Write 3 "after X, I do Y" pairings for the habits you want to solidify. This is called habit stacking and it dramatically reduces the cognitive load of remembering new behaviours.</div>
+        </div>
+        <div class="why-box">ADHD brains struggle with prospective memory (remembering to do something in the future). Anchoring a new habit to an existing one removes the need to remember — the existing habit triggers the new one automatically.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d23">
+      <div class="day-header" onclick="toggle('d23')">
+        <div class="day-num dn4">23</div>
+        <div class="day-meta">
+          <div class="day-label">Day Twenty-Three</div>
+          <div class="day-title">Build transition buffers between tasks</div>
+        </div>
+        <span class="day-type type-system">Focus</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Between every major task today, build a deliberate <strong>5–10 minute buffer</strong>. During this buffer: stand up, move, look away from screens, process what you just did. No starting the next thing until the buffer time is done. ADHD creates collisions between tasks — you're still mentally in task A when task B demands your attention, and the friction causes shutdown, irritability, or hyperfocus overshoot. Buffers are the gear change between tasks.</div>
+        </div>
+        <div class="why-box">Task transitions are neurologically expensive for ADHD. The brain needs time to disengage, clear residue, and re-orient. Without buffers, the accumulated transition cost builds into overwhelm by mid-afternoon.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d24">
+      <div class="day-header" onclick="toggle('d24')">
+        <div class="day-num dn4">24</div>
+        <div class="day-meta">
+          <div class="day-label">Day Twenty-Four</div>
+          <div class="day-title">Identify your 5 personal dysregulation early-warning signs</div>
+        </div>
+        <span class="day-type type-mind">Awareness</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Think back to the last time you fully crashed — overwhelmed, shut down, snapped at someone, or spiralled into hours of avoidance. <strong>What were the warning signs in the 30–60 minutes before it?</strong> Common ones: jaw clenching, starting and abandoning multiple tasks, checking the phone every 2 minutes, a feeling of dread, irritability about small things, talking faster. Write your personal 5. These are your early-warning system. When you notice 2 of them together, it's time for a regulation tool — not to push through.</div>
+        </div>
+        <div class="why-box">Dysregulation caught early takes 5 minutes to resolve. Dysregulation that goes unnoticed until full crisis takes hours. The difference is the ability to catch the signal before it becomes a flood.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d25">
+      <div class="day-header" onclick="toggle('d25')">
+        <div class="day-num dn4">25</div>
+        <div class="day-meta">
+          <div class="day-label">Day Twenty-Five</div>
+          <div class="day-title">Build your chaos protocol</div>
+        </div>
+        <span class="day-type type-system">Regulation</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Write a short "break glass in case of chaos" protocol — a step-by-step for what to do when you're fully dysregulated and nothing is working. It should be short enough to follow even when your brain is fried. A template:</div>
+          <ul class="steps" style="margin-top:12px">
+            <li data-n="1">Stop everything. Close the laptop. Set it aside.</li>
+            <li data-n="2">Cold water on face or short walk outside — minimum 5 minutes</li>
+            <li data-n="3">Brain dump everything in your head onto paper — don't organise it</li>
+            <li data-n="4">Pick the single smallest next thing. Just one.</li>
+            <li data-n="5">Use activation ritual. Set 25 min timer. Start.</li>
+          </ul>
+        </div>
+        <div class="why-box">Having a pre-written protocol removes the need to problem-solve during the moments when your problem-solving capacity is most impaired. Your past-self is helping your dysregulated-self.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d26">
+      <div class="day-header" onclick="toggle('d26')">
+        <div class="day-num dn4">26</div>
+        <div class="day-meta">
+          <div class="day-label">Day Twenty-Six</div>
+          <div class="day-title">One-day dopamine fast from your top drain</div>
+        </div>
+        <span class="day-type type-mind">Regulation</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Take your #1 dopamine drain from Day 5 and go without it for today only. If it's Instagram — delete the app for 24 hours. If it's YouTube — use a browser blocker. Notice three things: <strong>(1) how often you reach for it out of reflex, (2) what you do instead, (3) how your focus and mood feel by evening.</strong> This isn't about quitting forever — it's about experiencing firsthand how much of your dopamine budget this one thing consumes, and what your brain feels like without it.</div>
+        </div>
+        <div class="why-box">Cheap dopamine (social media, gaming, novelty scrolling) raises your dopamine baseline temporarily but suppresses receptors over time, making real-world rewards feel duller. One day of fasting resets sensitivity noticeably.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d27">
+      <div class="day-header" onclick="toggle('d27')">
+        <div class="day-num dn4">27</div>
+        <div class="day-meta">
+          <div class="day-label">Day Twenty-Seven</div>
+          <div class="day-title">Body doubling — don't work alone</div>
+        </div>
+        <span class="day-type type-system">Focus</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">For one of your hardest tasks today, work alongside another person. This can be: <strong>a friend or partner in the same room, a co-working café, a "study with me" YouTube livestream, or a virtual body doubling app (Focusmate, Flow Club).</strong> Tell them (or no one — just be near them) what you're working on. Then work. The presence of another human body — even one not engaging with you — radically changes task initiation and sustained focus for ADHD brains.</div>
+        </div>
+        <div class="why-box">Body doubling is one of the most consistently reported ADHD hacks across neurodivergent communities. The mechanism likely involves social accountability activating dopamine circuits that are otherwise underactive during solitary tasks.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d28">
+      <div class="day-header" onclick="toggle('d28')">
+        <div class="day-num dn4">28</div>
+        <div class="day-meta">
+          <div class="day-label">Day Twenty-Eight</div>
+          <div class="day-title">Audit and tighten your system</div>
+        </div>
+        <span class="day-type type-review">Review</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Go through every tool from the past 28 days and sort them into 3 columns:</div>
+          <ul class="steps" style="margin-top:12px">
+            <li data-n="✓">Keeping — this genuinely helped, I'm keeping it</li>
+            <li data-n="↻">Adjusting — good idea, wrong implementation. Change one thing about it</li>
+            <li data-n="✕">Dropping — not useful for my brain specifically. Let it go without guilt</li>
+          </ul>
+          <div style="margin-top:12px;font-size:13px;color:var(--muted)">The tools that survived 28 days of real use are your tools. Everything else is someone else's system.</div>
+        </div>
+        <div class="why-box">ADHD management is highly individual. What works for one person doesn't for another because the underlying deficit profile varies. Your goal is to find your personal minimum effective toolkit — not follow someone else's ideal protocol.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d29">
+      <div class="day-header" onclick="toggle('d29')">
+        <div class="day-num dn4">29</div>
+        <div class="day-meta">
+          <div class="day-label">Day Twenty-Nine</div>
+          <div class="day-title">Write your personal ADHD user manual</div>
+        </div>
+        <span class="day-type type-mind">Integration</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">Write a 1-page document about how your specific brain works. Include: <strong>My peak focus window. My 5 early warning signs. My chaos protocol. My daily non-negotiables (wake time, movement, brain dump). My top 3 regulation tools. My biggest dopamine drains and what I'm doing about them. What a "good day" setup looks like for me.</strong> Keep this somewhere visible. On bad days, you're not starting from scratch — you're returning to your manual.</div>
+        </div>
+        <div class="why-box">External documentation is a prosthetic for ADHD working memory and self-awareness. The manual means you don't have to hold your own operating knowledge in your head — it's there when your brain is offline.</div>
+      </div>
+    </div>
+
+    <div class="day-card" id="d30">
+      <div class="day-header" onclick="toggle('d30')">
+        <div class="day-num dn4">30</div>
+        <div class="day-meta">
+          <div class="day-label">Day Thirty</div>
+          <div class="day-title">Celebrate and plan the next 30 days</div>
+        </div>
+        <span class="day-type type-review">Integration</span>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="practice-box">
+          <div class="practice-label">Today's Practice</div>
+          <div class="practice-text">You've just done something most ADHD brains struggle enormously to do: stuck with a multi-week plan. Acknowledge that. Then:</div>
+          <ul class="steps" style="margin-top:12px">
+            <li data-n="1">Do something today that genuinely feels rewarding — not productive, just good. This is real dopamine, earned.</li>
+            <li data-n="2">Look at your ADHD user manual and identify the single most important thing to deepen in the next 30 days.</li>
+            <li data-n="3">Set one new goal — one system to build, one habit to strengthen, one drain to reduce further.</li>
+            <li data-n="4">Write down what your ADHD experience felt like on Day 1 vs today. What's actually different?</li>
+          </ul>
+        </div>
+        <div class="why-box">ADHD regulation isn't a destination — it's an ongoing practice. But a nervous system that is regularly moved, slept, fed, structured, and de-stimulated is a fundamentally quieter, more available place to live from. That's what you've been building.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<div class="quote-banner">
+  <div class="quote-text">"ADHD is not a problem of knowing what to do. It is a problem of doing what you know."</div>
+  <div class="quote-attr">— Dr. Russell Barkley, ADHD researcher</div>
+</div>
+
+<script>
+function showWeek(n, btn) {
+  document.querySelectorAll('.week-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.week-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('week' + n).classList.add('active');
+  btn.classList.add('active');
+}
+function toggle(id) {
+  const card = document.getElementById(id);
+  card.classList.toggle('open');
+}
+</script>
+</body>
+</html>
